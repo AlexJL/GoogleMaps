@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Google Maps</title>
+        <script src="https://maps.googleapis.com/maps/api/js"></script>
+        <!-- PARA CAMBIAR EL IDIOMA AGREGAR AL FINAL DEL js?language=zh-Hans' ese ejemplo es letra china.-->
+        <script>
+            function cargarMapa()
+            {
+                var mapOptions =   {
+                 center:new google.maps.LatLng(-8.1099457, -79.0023309), 
+                 zoom:15,
+                 mapTypeId:google.maps.MapTypeId.ROADMAP
+                };
+                var map = new google.maps.Map(document.getElementById("sample"),mapOptions);
+            }
+            function cargarMapaSatelital()
+            {
+                var mapOptions = {
+                center:new google.maps.LatLng(-8.1099457, -79.0023309),
+                zoom:15,
+                mapTypeId:google.maps.MapTypeId.SATELLITE
+                };
+                var map= new google.maps.Map(document.getElementById("sample"),mapOptions);
+            }
+            function cargarMapaHibrido()
+            {
+                var mapOptions =
+                {
+                center:new google.maps.LatLng(-8.1099457, -79.0023309),
+                zoom:15,
+                mapTypeId:google.maps.MapTypeId.HYBRID
+                };
+                var map= new google.maps.Map(document.getElementById("sample"),mapOptions);
+            }
+            function cargarMapaTerreno()
+            {
+                var mapOptions =
+                {
+                center:new google.maps.LatLng(-8.1099457, -79.0023309),
+                zoom:15,
+                mapTypeId:google.maps.MapTypeId.TERRAIN
+                };
+                var map= new google.maps.Map(document.getElementById("sample"),mapOptions);
+            }
+        </script>
+    </head>
+    <body>
+         <button onclick="cargarMapa()">Mapa Normal</button>
+         <button onclick="cargarMapaSatelital()">Mapa Satelital</button>
+         <button onclick="cargarMapaHibrido()">Mapa Hibrido</button>
+         <button onclick="cargarMapaTerreno()">Mapa Terreno</button>
+         <div id = "sample" style = "width:570px; height:580px;"></div>
+    </body>
+</html>
